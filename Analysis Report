@@ -1,0 +1,27 @@
+Data Analysis:
+
+All fraud transaction done in “transfer” and “cash_out” type so i eliminate other type transaction in dataset to reduce complexity of dataset and reduce computational power.
+
+All “isFlaggedFraud” =1 is also “isFraud” =1 so we can remove “isFlaggedFraud” feature as well.
+
+So, our target data is “isFraud” feature.There is highly imbalanced data in classification of isFraud.
+“isFraud”=1 : 0.13%    and “isFraud”=0 : 99.87%
+
+From analysing correlation-heatmap I realize that There is high correlation between oldbalanceOrig and newbalanceOrg.
+Same as newbalanceDest and oldbalanceDest.
+
+Due to multicollinearity, I remove these 2 features from dataset but after removing model accuracy decrease. So, I add those features back in my dataset. 
+
+There are so missing values (0) in oldbalanceOrig ,newbalanceorg ,oldbalanceDest and newbalanceDest with calculation error.
+
+To overcome highly imbalanced data, I use SMOTE (Over Sampling) technique.
+
+When I try to Normalization and standardization of features, it decreased all type of model accuracy so I avoid to use it.
+
+
+Algorithms: 				           Accuracy
+
+Logistic Regression 			     92.94%
+Decision Tree           	             99.91%
+Random Forest			             99.90%				
+KNN			                     99.48%
