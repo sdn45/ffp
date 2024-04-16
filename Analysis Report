@@ -1,6 +1,6 @@
 Data Analysis:
 
-All fraud transaction done in “transfer” and “cash_out” type so i eliminate other type transaction in dataset to reduce complexity of dataset and reduce computational power.
+All the fraud transaction done in “transfer” and “cash_out” type so i eliminate other type transaction in dataset to reduce complexity of dataset and reduce computational power.
 
 All “isFlaggedFraud” =1 is also “isFraud” =1 so we can remove “isFlaggedFraud” feature as well.
 
